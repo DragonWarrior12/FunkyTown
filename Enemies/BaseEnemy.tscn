@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://braa267k0r1l4"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_xaphk"]
+[ext_resource type="Texture2D" uid="uid://davx450rhgwxs" path="res://Enemies/enemy.png" id="2_wy3o1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bscal"]
+radius = 7.0
+
+[node name="BaseEnemy" type="PathFollow2D" node_paths=PackedStringArray("health")]
+rotates = false
+loop = false
+script = ExtResource("1_xaphk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wy3o1")
+
+[node name="CollisionArea" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+shape = SubResource("CircleShape2D_bscal")

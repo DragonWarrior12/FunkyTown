@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://beh2odylfvlvh"]
+
+[ext_resource type="PackedScene" uid="uid://djg7u3oljytxp" path="res://Maps/Map1.tscn" id="2_kwiy8"]
+[ext_resource type="PackedScene" uid="uid://braa267k0r1l4" path="res://Enemies/BaseEnemy.tscn" id="3_h1t4b"]
+[ext_resource type="PackedScene" uid="uid://dfwuku5t8t4mj" path="res://Units/BaseUnit.tscn" id="3_tchby"]
+
+[sub_resource type="Curve2D" id="Curve2D_weva5"]
+bake_interval = 2.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, 40, 0, 0, 0, 0, 40, 40, 0, 0, 0, 0, 40, 8, 0, 0, 0, 0, 120, 8, 0, 0, 0, 0, 120, 40)
+}
+point_count = 5
+
+[node name="Level" type="Node2D"]
+position = Vector2(192, 192)
+scale = Vector2(8, 8)
+
+[node name="Map1" parent="." instance=ExtResource("2_kwiy8")]
+position = Vector2(-8, -8)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-8, -8)
+curve = SubResource("Curve2D_weva5")
+
+[node name="BaseEnemy" parent="Path2D" node_paths=PackedStringArray("path") instance=ExtResource("3_h1t4b")]
+position = Vector2(8, 40)
+path = NodePath("..")
+
+[node name="BaseEnemy2" parent="Path2D" node_paths=PackedStringArray("path") instance=ExtResource("3_h1t4b")]
+position = Vector2(40, 37.1047)
+progress = 34.8832
+path = NodePath("..")
+
+[node name="BaseEnemy3" parent="Path2D" node_paths=PackedStringArray("path") instance=ExtResource("3_h1t4b")]
+position = Vector2(75.897, 8)
+progress = 99.8976
+path = NodePath("..")
+
+[node name="BaseUnit" parent="." instance=ExtResource("3_tchby")]
+position = Vector2(48, 0)
+
+[node name="BaseUnit2" parent="." instance=ExtResource("3_tchby")]
+position = Vector2(96, 0)

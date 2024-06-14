@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfwuku5t8t4mj"]
+
+[ext_resource type="Script" path="res://Scripts/Unit.cs" id="1_dbq0l"]
+[ext_resource type="Texture2D" uid="uid://dlbuwiqswu4tm" path="res://Units/unit.png" id="1_utgl1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r8go"]
+size = Vector2(16, 16)
+
+[node name="BaseUnit" type="Node2D" node_paths=PackedStringArray("blockArea", "attackArea", "Blocking", "health")]
+script = ExtResource("1_dbq0l")
+blockArea = NodePath("Area2D")
+maxBlock = 1
+Blocking = NodePath("Blocking")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_utgl1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5r8go")
+
+[node name="Blocking" type="Node2D" parent="."]
