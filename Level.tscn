@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://beh2odylfvlvh"]
+[gd_scene load_steps=6 format=3 uid="uid://beh2odylfvlvh"]
 
 [ext_resource type="PackedScene" uid="uid://djg7u3oljytxp" path="res://Maps/Map1.tscn" id="2_kwiy8"]
 [ext_resource type="PackedScene" uid="uid://braa267k0r1l4" path="res://Enemies/BaseEnemy.tscn" id="3_h1t4b"]
 [ext_resource type="PackedScene" uid="uid://dfwuku5t8t4mj" path="res://Units/BaseUnit.tscn" id="3_tchby"]
+[ext_resource type="PackedScene" uid="uid://dwf72ykd8jdom" path="res://Units/BaseRangedUnit.tscn" id="4_o3pma"]
 
 [sub_resource type="Curve2D" id="Curve2D_weva5"]
 bake_interval = 2.0
@@ -41,3 +42,6 @@ position = Vector2(48, 0)
 
 [node name="BaseUnit2" parent="." instance=ExtResource("3_tchby")]
 position = Vector2(96, 0)
+
+[node name="BaseUnit3" parent="." instance=ExtResource("4_o3pma")]
+position = Vector2(64, 32)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwf72ykd8jdom"]
+
+[ext_resource type="PackedScene" uid="uid://dfwuku5t8t4mj" path="res://Units/BaseUnit.tscn" id="1_e0dyw"]
+[ext_resource type="Texture2D" uid="uid://cg7qbtr11j4g5" path="res://Units/rangedUnit.png" id="2_bb1je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5cw0"]
+size = Vector2(64, 48)
+
+[node name="BaseUnit" node_paths=PackedStringArray("attackArea") instance=ExtResource("1_e0dyw")]
+attackArea = NodePath("AttackArea")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_bb1je")
+
+[node name="AttackArea" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_v5cw0")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7co5o7x3wan1"]
+
+[ext_resource type="Script" path="res://Scripts/Health.cs" id="1_rw4ai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udrfg"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="Health" type="ProgressBar"]
+offset_right = 176.0
+offset_bottom = 16.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_udrfg")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_rw4ai")

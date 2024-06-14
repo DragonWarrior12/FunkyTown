@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://braa267k0r1l4"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_xaphk"]
+[ext_resource type="PackedScene" uid="uid://b7co5o7x3wan1" path="res://Health.tscn" id="2_gvhxr"]
 [ext_resource type="Texture2D" uid="uid://davx450rhgwxs" path="res://Enemies/enemy.png" id="2_wy3o1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bscal"]
@@ -10,6 +11,16 @@ radius = 7.0
 rotates = false
 loop = false
 script = ExtResource("1_xaphk")
+health = NodePath("Health")
+
+[node name="Health" parent="." instance=ExtResource("2_gvhxr")]
+offset_left = -8.0
+offset_top = -9.0
+offset_right = 120.0
+offset_bottom = -5.0
+scale = Vector2(0.125, 0.125)
+max_value = 50.0
+value = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wy3o1")
